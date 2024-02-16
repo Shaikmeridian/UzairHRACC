@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HRACCDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyIdPK" />
+          </Key>
+          <Property Name="CompanyIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar(max)" />
+          <Property Name="CompanyPhone" Type="nvarchar(max)" />
+          <Property Name="CompanyEmail" Type="nvarchar(max)" />
+          <Property Name="CompanyAddress1" Type="nvarchar(max)" />
+          <Property Name="CompanyAddress2" Type="nvarchar(max)" />
+          <Property Name="CompanyCity" Type="nvarchar(max)" />
+          <Property Name="CompanyState" Type="nvarchar(max)" />
+          <Property Name="CompanyZip" Type="nvarchar(max)" />
+          <Property Name="CompanyFax" Type="nvarchar(max)" />
+          <Property Name="CompanyLogoImage" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Consultant">
+          <Key>
+            <PropertyRef Name="ConsultantIdPK" />
+          </Key>
+          <Property Name="ConsultantIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="MiddleName" Type="nvarchar(max)" />
+          <Property Name="ConsultantNameAbbrv" Type="nvarchar(max)" />
+          <Property Name="Address1" Type="nvarchar(max)" />
+          <Property Name="Address2" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Zip" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="StartDate" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="InactiveDate" Type="nvarchar(max)" />
+          <Property Name="InactiveReason" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ConsultantPositionDetails">
+          <Key>
+            <PropertyRef Name="ConsultantPositionIdPK" />
+          </Key>
+          <Property Name="ConsultantPositionIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConsultantIdFK" Type="int" Nullable="false" />
+          <Property Name="PositionIdFK" Type="int" Nullable="false" />
+          <Property Name="PositionRateIdFK" Type="int" Nullable="false" />
+          <Property Name="PositionStartDate" Type="nvarchar(max)" />
+          <Property Name="PositionEndDate" Type="nvarchar(max)" />
+          <Property Name="PositionActive" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerIdPK" />
+          </Key>
+          <Property Name="CustomerIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar(max)" />
+          <Property Name="CustomerContactPhone" Type="nvarchar(max)" />
+          <Property Name="CustomerContactEmail" Type="nvarchar(max)" />
+          <Property Name="CustomerContactAddress1" Type="nvarchar(max)" />
+          <Property Name="CustomerContactAddress2" Type="nvarchar(max)" />
+          <Property Name="CustomerContactCity" Type="nvarchar(max)" />
+          <Property Name="CustomerContactState" Type="nvarchar(max)" />
+          <Property Name="CustomerContactZip" Type="nvarchar(max)" />
+          <Property Name="CustomerTerm" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeIdPk" />
+          </Key>
+          <Property Name="EmployeeIdPk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyIdFK" Type="int" Nullable="false" />
+          <Property Name="EmployeeRoleIdFK" Type="int" Nullable="false" />
+          <Property Name="EmployeeLastName" Type="nvarchar(max)" />
+          <Property Name="EmployeeFirstName" Type="nvarchar(max)" />
+          <Property Name="EmployeeMiddleName" Type="nvarchar(max)" />
+          <Property Name="EmployeePhone" Type="nvarchar(max)" />
+          <Property Name="EmployeeEmail" Type="nvarchar(max)" />
+          <Property Name="EmployeeAddress1" Type="nvarchar(max)" />
+          <Property Name="EmployeeAddress2" Type="nvarchar(max)" />
+          <Property Name="EmployeeCity" Type="nvarchar(max)" />
+          <Property Name="EmployeeState" Type="nvarchar(max)" />
+          <Property Name="EmployeeZip" Type="nvarchar(max)" />
+          <Property Name="EmployeeTitle" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EmployeeRole">
+          <Key>
+            <PropertyRef Name="EmployeeRoleIdPK" />
+          </Key>
+          <Property Name="EmployeeRoleIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeRoleName" Type="nchar" MaxLength="10" />
+          <Property Name="EmployeeRoleActive" Type="nchar" MaxLength="10" />
+          <Property Name="Inactive" Type="nchar" MaxLength="10" />
+          <Property Name="InactiveReason" Type="nchar" MaxLength="10" />
+          <Property Name="DateAdded" Type="nchar" MaxLength="10" />
+          <Property Name="DateUpdated" Type="nchar" MaxLength="10" />
+          <Property Name="AddedBy" Type="nchar" MaxLength="10" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceIdPK" />
+          </Key>
+          <Property Name="InvoiceIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="nvarchar(max)" />
+          <Property Name="Year" Type="nvarchar(max)" />
+          <Property Name="Month" Type="nvarchar(max)" />
+          <Property Name="InvoiceDate" Type="nvarchar(max)" />
+          <Property Name="DueDate" Type="nvarchar(max)" />
+          <Property Name="ConsultantIdFK" Type="int" />
+          <Property Name="ConsultantPositionIdFK" Type="int" />
+          <Property Name="RegularHours" Type="nvarchar(max)" />
+          <Property Name="OvertimeHours" Type="nvarchar(max)" />
+          <Property Name="InvoiceAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="InvoiceReconcile">
+          <Key>
+            <PropertyRef Name="InvoiceReconcileIdPK" />
+          </Key>
+          <Property Name="InvoiceReconcileIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceIdFK" Type="int" Nullable="false" />
+          <Property Name="ReconcileIdFK" Type="int" Nullable="false" />
+          <Property Name="Reconcile" Type="nvarchar(max)" />
+          <Property Name="InvoiceAmount" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PositionIdPK" />
+          </Key>
+          <Property Name="PositionIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerIdFK" Type="int" Nullable="false" />
+          <Property Name="PositionNumber" Type="nvarchar(max)" />
+          <Property Name="PositionTitle" Type="nvarchar(max)" />
+          <Property Name="PositionFamily" Type="nvarchar(max)" />
+          <Property Name="PositionScopeVariant" Type="nvarchar(max)" />
+          <Property Name="PurchaseOrderNo" Type="nvarchar(max)" />
+          <Property Name="PurchaseRequisitionNo" Type="nvarchar(max)" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="InactiveDate" Type="nvarchar(max)" />
+          <Property Name="InactiveReason" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PositionRate">
+          <Key>
+            <PropertyRef Name="PositionRateIdPK" />
+          </Key>
+          <Property Name="PositionRateIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PositionIdFK" Type="int" Nullable="false" />
+          <Property Name="FiscalYearStart" Type="nvarchar(max)" />
+          <Property Name="FiscalYearEnd" Type="nvarchar(max)" />
+          <Property Name="FiscalYearAbbrv" Type="nvarchar(max)" />
+          <Property Name="Rate" Type="int" />
+          <Property Name="OvertimeRate" Type="int" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="InactiveDate" Type="nvarchar(max)" />
+          <Property Name="InactiveReason" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Reconcile">
+          <Key>
+            <PropertyRef Name="ReconcileIdPK" />
+          </Key>
+          <Property Name="ReconcileIdPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CheckNumber" Type="nvarchar(max)" />
+          <Property Name="CheckRecievedDate" Type="nvarchar(max)" />
+          <Property Name="CheckAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserDetails">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="nvarchar(max)" />
+          <Property Name="DateUpdated" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar(max)" />
+          <Property Name="UpdatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="HRACCDBModelStoreContainer">
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Consultant" EntityType="Self.Consultant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ConsultantPositionDetails" EntityType="Self.ConsultantPositionDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeRole" EntityType="Self.EmployeeRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceReconcile" EntityType="Self.InvoiceReconcile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PositionRate" EntityType="Self.PositionRate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reconcile" EntityType="Self.Reconcile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRACCDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyIdPK" />
+          </Key>
+          <Property Name="CompanyIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyAddress1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyState" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyZip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyLogoImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyFax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Consultant">
+          <Key>
+            <PropertyRef Name="ConsultantIdPK" />
+          </Key>
+          <Property Name="ConsultantIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConsultantNameAbbrv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="InactiveDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InactiveReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerIdPK" />
+          </Key>
+          <Property Name="CustomerIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerContactPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerContactEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerContactAddress1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerContactAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerContactCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerContactState" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerContactZip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="CustomerTerm" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeIdPk" />
+          </Key>
+          <Property Name="EmployeeIdPk" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyIdFK" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeRoleIdFK" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeLastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeFirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeMiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeAddress1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeState" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeZip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EmployeeRole">
+          <Key>
+            <PropertyRef Name="EmployeeRoleIdPK" />
+          </Key>
+          <Property Name="EmployeeRoleIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeRoleName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="EmployeeRoleActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Inactive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="InactiveReason" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="HRACCDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="Consultants" EntityType="Self.Consultant" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeeRoles" EntityType="Self.EmployeeRole" />
+          <EntitySet Name="Positions" EntityType="HRACCDBModel.Position" />
+          <AssociationSet Name="FK_Position_Customer" Association="HRACCDBModel.FK_Position_Customer">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Position1" EntitySet="Positions" />
+          </AssociationSet>
+          <EntitySet Name="PositionRates" EntityType="HRACCDBModel.PositionRate" />
+          <EntitySet Name="Invoices" EntityType="HRACCDBModel.Invoice" />
+          <EntitySet Name="InvoiceReconciles" EntityType="HRACCDBModel.InvoiceReconcile" />
+          <EntitySet Name="Reconciles" EntityType="HRACCDBModel.Reconcile" />
+          <EntitySet Name="ConsultantPositionDetails" EntityType="HRACCDBModel.ConsultantPositionDetail" />
+          <EntitySet Name="UserDetails" EntityType="HRACCDBModel.UserDetail" />
+        </EntityContainer>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PositionIdPK" />
+          </Key>
+          <Property Name="PositionIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerIdFK" Type="Int32" Nullable="false" />
+          <Property Name="PositionNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PositionTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PositionFamily" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PositionScopeVariant" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseOrderNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseRequisitionNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="InactiveDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InactiveReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Position1" Relationship="HRACCDBModel.FK_Position_Customer" FromRole="Position" ToRole="Position1" />
+          <NavigationProperty Name="Position2" Relationship="HRACCDBModel.FK_Position_Customer" FromRole="Position1" ToRole="Position" />
+        </EntityType>
+        <Association Name="FK_Position_Customer">
+          <End Type="HRACCDBModel.Position" Role="Position" Multiplicity="1" />
+          <End Type="HRACCDBModel.Position" Role="Position1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PositionIdPK" />
+            </Principal>
+            <Dependent Role="Position1">
+              <PropertyRef Name="PositionIdPK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PositionRate">
+          <Key>
+            <PropertyRef Name="PositionRateIdPK" />
+          </Key>
+          <Property Name="PositionRateIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PositionIdFK" Type="Int32" Nullable="false" />
+          <Property Name="FiscalYearStart" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FiscalYearEnd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FiscalYearAbbrv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rate" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="InactiveDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InactiveReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OvertimeRate" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceIdPK" />
+          </Key>
+          <Property Name="InvoiceIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Month" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DueDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConsultantIdFK" Type="Int32" />
+          <Property Name="ConsultantPositionIdFK" Type="Int32" />
+          <Property Name="RegularHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OvertimeHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InvoiceReconcile">
+          <Key>
+            <PropertyRef Name="InvoiceReconcileIdPK" />
+          </Key>
+          <Property Name="InvoiceReconcileIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceIdFK" Type="Int32" Nullable="false" />
+          <Property Name="ReconcileIdFK" Type="Int32" Nullable="false" />
+          <Property Name="Reconcile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceAmount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Reconcile">
+          <Key>
+            <PropertyRef Name="ReconcileIdPK" />
+          </Key>
+          <Property Name="ReconcileIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CheckNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CheckRecievedDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CheckAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ConsultantPositionDetail">
+          <Key>
+            <PropertyRef Name="ConsultantPositionIdPK" />
+          </Key>
+          <Property Name="ConsultantPositionIdPK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConsultantIdFK" Type="Int32" Nullable="false" />
+          <Property Name="PositionIdFK" Type="Int32" Nullable="false" />
+          <Property Name="PositionStartDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PositionEndDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PositionActive" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PositionRateIdFK" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HRACCDBModelStoreContainer" CdmEntityContainer="HRACCDBEntities">
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="HRACCDBModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="CompanyFax" ColumnName="CompanyFax" />
+                <ScalarProperty Name="CompanyIdPK" ColumnName="CompanyIdPK" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+                <ScalarProperty Name="CompanyAddress1" ColumnName="CompanyAddress1" />
+                <ScalarProperty Name="CompanyAddress2" ColumnName="CompanyAddress2" />
+                <ScalarProperty Name="CompanyCity" ColumnName="CompanyCity" />
+                <ScalarProperty Name="CompanyState" ColumnName="CompanyState" />
+                <ScalarProperty Name="CompanyZip" ColumnName="CompanyZip" />
+                <ScalarProperty Name="CompanyLogoImage" ColumnName="CompanyLogoImage" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consultants">
+            <EntityTypeMapping TypeName="HRACCDBModel.Consultant">
+              <MappingFragment StoreEntitySet="Consultant">
+                <ScalarProperty Name="ConsultantIdPK" ColumnName="ConsultantIdPK" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="ConsultantNameAbbrv" ColumnName="ConsultantNameAbbrv" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="InactiveDate" ColumnName="InactiveDate" />
+                <ScalarProperty Name="InactiveReason" ColumnName="InactiveReason" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="HRACCDBModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerTerm" ColumnName="CustomerTerm" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="CustomerIdPK" ColumnName="CustomerIdPK" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerContactPhone" ColumnName="CustomerContactPhone" />
+                <ScalarProperty Name="CustomerContactEmail" ColumnName="CustomerContactEmail" />
+                <ScalarProperty Name="CustomerContactAddress1" ColumnName="CustomerContactAddress1" />
+                <ScalarProperty Name="CustomerContactAddress2" ColumnName="CustomerContactAddress2" />
+                <ScalarProperty Name="CustomerContactCity" ColumnName="CustomerContactCity" />
+                <ScalarProperty Name="CustomerContactState" ColumnName="CustomerContactState" />
+                <ScalarProperty Name="CustomerContactZip" ColumnName="CustomerContactZip" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="HRACCDBModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeIdPk" ColumnName="EmployeeIdPk" />
+                <ScalarProperty Name="CompanyIdFK" ColumnName="CompanyIdFK" />
+                <ScalarProperty Name="EmployeeRoleIdFK" ColumnName="EmployeeRoleIdFK" />
+                <ScalarProperty Name="EmployeeLastName" ColumnName="EmployeeLastName" />
+                <ScalarProperty Name="EmployeeFirstName" ColumnName="EmployeeFirstName" />
+                <ScalarProperty Name="EmployeeMiddleName" ColumnName="EmployeeMiddleName" />
+                <ScalarProperty Name="EmployeePhone" ColumnName="EmployeePhone" />
+                <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+                <ScalarProperty Name="EmployeeAddress1" ColumnName="EmployeeAddress1" />
+                <ScalarProperty Name="EmployeeAddress2" ColumnName="EmployeeAddress2" />
+                <ScalarProperty Name="EmployeeCity" ColumnName="EmployeeCity" />
+                <ScalarProperty Name="EmployeeState" ColumnName="EmployeeState" />
+                <ScalarProperty Name="EmployeeZip" ColumnName="EmployeeZip" />
+                <ScalarProperty Name="EmployeeTitle" ColumnName="EmployeeTitle" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeRoles">
+            <EntityTypeMapping TypeName="HRACCDBModel.EmployeeRole">
+              <MappingFragment StoreEntitySet="EmployeeRole">
+                <ScalarProperty Name="EmployeeRoleIdPK" ColumnName="EmployeeRoleIdPK" />
+                <ScalarProperty Name="EmployeeRoleName" ColumnName="EmployeeRoleName" />
+                <ScalarProperty Name="EmployeeRoleActive" ColumnName="EmployeeRoleActive" />
+                <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+                <ScalarProperty Name="InactiveReason" ColumnName="InactiveReason" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="HRACCDBModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="InactiveReason" ColumnName="InactiveReason" />
+                <ScalarProperty Name="InactiveDate" ColumnName="InactiveDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PurchaseRequisitionNo" ColumnName="PurchaseRequisitionNo" />
+                <ScalarProperty Name="PurchaseOrderNo" ColumnName="PurchaseOrderNo" />
+                <ScalarProperty Name="PositionScopeVariant" ColumnName="PositionScopeVariant" />
+                <ScalarProperty Name="PositionFamily" ColumnName="PositionFamily" />
+                <ScalarProperty Name="PositionTitle" ColumnName="PositionTitle" />
+                <ScalarProperty Name="PositionNumber" ColumnName="PositionNumber" />
+                <ScalarProperty Name="CustomerIdFK" ColumnName="CustomerIdFK" />
+                <ScalarProperty Name="PositionIdPK" ColumnName="PositionIdPK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PositionRates">
+            <EntityTypeMapping TypeName="HRACCDBModel.PositionRate">
+              <MappingFragment StoreEntitySet="PositionRate">
+                <ScalarProperty Name="OvertimeRate" ColumnName="OvertimeRate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="InactiveReason" ColumnName="InactiveReason" />
+                <ScalarProperty Name="InactiveDate" ColumnName="InactiveDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="FiscalYearAbbrv" ColumnName="FiscalYearAbbrv" />
+                <ScalarProperty Name="FiscalYearEnd" ColumnName="FiscalYearEnd" />
+                <ScalarProperty Name="FiscalYearStart" ColumnName="FiscalYearStart" />
+                <ScalarProperty Name="PositionIdFK" ColumnName="PositionIdFK" />
+                <ScalarProperty Name="PositionRateIdPK" ColumnName="PositionRateIdPK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="HRACCDBModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="OvertimeHours" ColumnName="OvertimeHours" />
+                <ScalarProperty Name="RegularHours" ColumnName="RegularHours" />
+                <ScalarProperty Name="ConsultantPositionIdFK" ColumnName="ConsultantPositionIdFK" />
+                <ScalarProperty Name="ConsultantIdFK" ColumnName="ConsultantIdFK" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="InvoiceIdPK" ColumnName="InvoiceIdPK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceReconciles">
+            <EntityTypeMapping TypeName="HRACCDBModel.InvoiceReconcile">
+              <MappingFragment StoreEntitySet="InvoiceReconcile">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="Reconcile" ColumnName="Reconcile" />
+                <ScalarProperty Name="ReconcileIdFK" ColumnName="ReconcileIdFK" />
+                <ScalarProperty Name="InvoiceIdFK" ColumnName="InvoiceIdFK" />
+                <ScalarProperty Name="InvoiceReconcileIdPK" ColumnName="InvoiceReconcileIdPK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reconciles">
+            <EntityTypeMapping TypeName="HRACCDBModel.Reconcile">
+              <MappingFragment StoreEntitySet="Reconcile">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="CheckAmount" ColumnName="CheckAmount" />
+                <ScalarProperty Name="CheckRecievedDate" ColumnName="CheckRecievedDate" />
+                <ScalarProperty Name="CheckNumber" ColumnName="CheckNumber" />
+                <ScalarProperty Name="ReconcileIdPK" ColumnName="ReconcileIdPK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsultantPositionDetails">
+            <EntityTypeMapping TypeName="HRACCDBModel.ConsultantPositionDetail">
+              <MappingFragment StoreEntitySet="ConsultantPositionDetails">
+                <ScalarProperty Name="PositionRateIdFK" ColumnName="PositionRateIdFK" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="PositionActive" ColumnName="PositionActive" />
+                <ScalarProperty Name="PositionEndDate" ColumnName="PositionEndDate" />
+                <ScalarProperty Name="PositionStartDate" ColumnName="PositionStartDate" />
+                <ScalarProperty Name="PositionIdFK" ColumnName="PositionIdFK" />
+                <ScalarProperty Name="ConsultantIdFK" ColumnName="ConsultantIdFK" />
+                <ScalarProperty Name="ConsultantPositionIdPK" ColumnName="ConsultantPositionIdPK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="HRACCDBModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetails">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
