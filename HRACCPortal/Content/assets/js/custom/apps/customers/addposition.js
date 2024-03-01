@@ -24,7 +24,15 @@ var KTModalCustomersAdd = function () {
 						}
 					},
                     'PositionNumber': {
-						validators: {
+                        validators: {
+                            regexp: {
+                                regexp: /[a-zA-Z0-9]/,
+                                message: 'Position number must be alphanumeric',
+                            },
+                            stringLength: {
+                                max: 20,
+                                message: 'The position number must be less than 20 characters',
+                            },
 							notEmpty: {
                                 message: 'Position Number is required'
 							}
@@ -38,9 +46,9 @@ var KTModalCustomersAdd = function () {
 						}
 					},
 					'PositionFamily': {
-						validators: {
+                        validators: {
 							notEmpty: {
-                                message: 'PositionFamily is required'
+                               message: 'PositionFamily is required'
 							}
 						}
 					},
@@ -52,14 +60,30 @@ var KTModalCustomersAdd = function () {
 						}
 					},
 					'PurchaseOrderNo': {
-						validators: {
+                        validators: {
+                            regexp: {
+                                regexp: /[a-zA-Z0-9]/,
+                                message: 'Purchase order number must be alphanumeric',
+                            },
+                            stringLength: {
+                                max: 20,
+                                message: 'The purchase order number must be less than 20 characters',
+                            },
 							notEmpty: {
                                 message: 'Purchase Order No is required'
 							}
 						}
 					},
 					'PurchaseRequisitionNo': {
-						validators: {
+                        validators: {
+                            regexp: {
+                                regexp: /[a-zA-Z0-9]/,
+                                message: 'Purchase requisition number must be alphanumeric',
+                            },
+                            stringLength: {
+                                max: 20,
+                                message: 'The purchase requisition number must be less than 20 characters',
+                            },
 							notEmpty: {
                                 message: 'Purchase Requisition No is required'
 							}
@@ -216,7 +240,7 @@ var KTModalCustomersAdd = function () {
                 cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
+                    cancelButton: "btn btn-success"
                 }
             }).then(function (result) {
                 if (result.value) {
@@ -248,7 +272,7 @@ var KTModalCustomersAdd = function () {
                 cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
+                    cancelButton: "btn btn-success"
                 }
             }).then(function (result) {
                 if (result.value) {

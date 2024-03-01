@@ -191,7 +191,9 @@
                                 <div class="row g-9 mb-7">
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Fiscal Year End</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span class="required">Fiscal Year End</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <div class="input-group" id="kt_td_picker_date_only" data-td-target-input="nearest" data-td-target-toggle="nearest">
@@ -204,7 +206,7 @@
                                     </div>
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Fiscal Year Abbrv</label>
+                                        <label class="fs-6 fw-semibold mb-2">Fiscal Year Abbreviation</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <input type="text" class="form-control form-control-solid" placeholder="" name="FiscalYearAbbrv" />
@@ -214,7 +216,9 @@
                                 <div class="row g-9 mb-7">
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Rate</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span class="required">Rate</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <input type="text" class="form-control form-control-solid" placeholder="" name="Rate" />
@@ -222,7 +226,9 @@
                                     </div>
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Overtime Rate</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span>Overtime Rate</span> 
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <input type="text" class="form-control form-control-solid" placeholder="" name="OvertimeRate" />
@@ -250,7 +256,9 @@
                                 <div class="row g-9 mb-7" id="hide_inactivedetails">
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class=" fs-6 fw-semibold mb-2">Inactive Date</label>
+                                        <label class=" fs-6 fw-semibold mb-2">
+                                            <span class="required">Inactive Date</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <div class="input-group" id="kt_td_picker_date_only" data-td-target-input="nearest" data-td-target-toggle="nearest">
@@ -268,7 +276,9 @@
                                     </div>
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Inactive Reason</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span class="required">Inactive Reason</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <input type="text" class="form-control form-control-solid" placeholder="" name="InactiveReason" id="InactiveReason" />
@@ -286,7 +296,7 @@
                         <!--begin::Modal footer-->
                         <div class="modal-footer flex-center">
                             <!--begin::Button-->
-                            <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">Discard</button>
+                            <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-danger me-3">Discard</button>
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">

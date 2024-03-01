@@ -164,8 +164,9 @@ namespace HRACCPortal.Models
                                    CustomerName = customer.CustomerName,
                                    CustomerTerm = customer.CustomerTerm,
                                    DateAdded = customer.DateAdded,
-                                   DateUpdated = Convert.ToDateTime(customer.DateUpdated).ToString("MMM,dd, yyyy"),
-                                  // DateUpdated = customer.DateUpdated,
+                                  // DateUpdated = Convert.ToDateTime(customer.DateUpdated).ToString("MMM,dd, yyyy"),
+                                   DateUpdated= DateTime.Now.ToString("MMM,dd,yyyy"),
+                                   // DateUpdated = customer.DateUpdated,
                                    UpdatedBy = customer.UpdatedBy,
                                    CustomerIdPK = customer.CustomerIdPK,
                                    isActive = customer.isActive
@@ -294,8 +295,9 @@ namespace HRACCPortal.Models
                                    Phone = obj.Phone,
                                    StartDate = obj.StartDate,
                                    DateAdded = obj.DateAdded, //string.IsNullOrEmpty(obj.DateAdded) == true ? DateTime.Now.ToString("MM/dd/yyyy") : DateTime.Parse(obj.DateAdded).ToString("MM/dd/yyyy"),
-                                 //  DateUpdated = obj.DateUpdated,
-                                   DateUpdated = Convert.ToDateTime(obj.DateUpdated).ToString("MMM,dd, yyyy"),
+                                                              //  DateUpdated = obj.DateUpdated,
+                                   //DateUpdated = Convert.ToDateTime(obj.DateUpdated).ToString("MMM,dd, yyyy"),
+                                   DateUpdated= DateTime.Now.ToString("MMM,dd,yyyy"),
                                    UpdatedBy = obj.UpdatedBy,
                                    State = obj.State,
                                    Title = obj.Title,
@@ -476,9 +478,10 @@ namespace HRACCPortal.Models
                                               MonthStartDate = FirstDayOfMonthFromDateTime(x.inv.Year, x.inv.Month),
                                               MonthEndDate = LastDayOfMonthFromDateTime(x.inv.Year, x.inv.Month),
                                               DateAdded = x.inv.DateAdded,
-                                              InvoiceDate = Convert.ToDateTime(x.inv.InvoiceDate).ToString("MMM,dd, yyyy"),
-
-                                              DueDate = string.IsNullOrEmpty(x.inv.DueDate) ? "": Convert.ToDateTime(x.inv.DueDate).ToString("MMM,dd, yyyy"),
+                                           //   InvoiceDate = Convert.ToDateTime(x.inv.InvoiceDate).ToString("MMM,dd, yyyy"),
+                                              InvoiceDate = DateTime.Now.ToString("MMM,dd,yyyy"),
+                                              DueDate = string.IsNullOrEmpty(x.inv.DueDate) ? "" : DateTime.Now.ToString("MMM,dd,yyyy"),
+                                            //  DueDate = string.IsNullOrEmpty(x.inv.DueDate) ? "" : Convert.ToDateTime(x.inv.DueDate).ToString("MMM,dd, yyyy"),
                                               Term = x.c.CustomerTerm,
 
                                           }).ToList();

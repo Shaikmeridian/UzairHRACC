@@ -29,7 +29,7 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Customers" />
+                        <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Consultants" />
                     </div>
                     <!--end::Search-->
                 </div>
@@ -350,7 +350,7 @@
 
                                 </div>
                                 <!--begin::Input group-->
-                                <div class="row g-9 mb-7 divact" >
+                                <div class="row g-9 mb-7 divact">
                                     <!--begin::Col-->
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
@@ -359,7 +359,7 @@
                                         <!--begin::Input-->
                                         <input class="form-control form-control-solid" placeholder="Inactive Reason" name="InactiveReason" id="InactiveReason" value="" />
                                         <div class="fv-plugins-message-container invalid-feedback" id="divreason" style="display:none;">
-                                            <div data-field="FirstName" data-validator="notEmpty" >
+                                            <div data-field="FirstName" data-validator="notEmpty">
                                                 Reason is required
                                             </div>
                                         </div>
@@ -396,7 +396,7 @@
                         <!--begin::Modal footer-->
                         <div class="modal-footer flex-center">
                             <!--begin::Button-->
-                            <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">Discard</button>
+                            <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-danger">Discard</button>
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">
@@ -455,7 +455,7 @@
                     $("#InactiveDate").val("");
                     $(".divact").hide();
                 }
-              });
+            });
         });
         $("#InactiveReason").blur(function () {
             if ($(this).val() == "") {
@@ -499,7 +499,7 @@
                 }
             }
         });
-        
+
         function GFG_click(clicked) {
             $.ajax({
                 type: "POST",

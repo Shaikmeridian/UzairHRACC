@@ -19,7 +19,7 @@ var KTModalCustomersAdd = function () {
                     'PositionIdFK': {
 						validators: {
 							notEmpty: {
-                                message: 'Position number is required'
+                                message: 'Position Selection is required'
 							}
 						}
 					},
@@ -38,7 +38,7 @@ var KTModalCustomersAdd = function () {
 						}
 					},
 					'Rate': {
-						validators: {
+                        validators: {
 							notEmpty: {
                                 message: 'Rate is required'
 							}
@@ -186,7 +186,7 @@ var KTModalCustomersAdd = function () {
                 cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
+                    cancelButton: "btn btn-success"
                 }
             }).then(function (result) {
                 if (result.value) {
@@ -218,7 +218,7 @@ var KTModalCustomersAdd = function () {
                 cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
+                    cancelButton: "btn btn-success"
                 }
             }).then(function (result) {
                 if (result.value) {

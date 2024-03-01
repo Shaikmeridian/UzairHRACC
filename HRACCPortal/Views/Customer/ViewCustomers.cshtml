@@ -208,7 +208,7 @@
                                 <div class="fv-row mb-7">
                                     <!--begin::Label-->
                                     <label class="fs-6 fw-semibold mb-2">
-                                        <span class="">Address1</span>
+                                        <span class="required">Address1</span>
                                         <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="Address1" title="Address1"></i>
                                     </label>
                                     <!--end::Label-->
@@ -245,10 +245,63 @@
                                     <!--begin::Col-->
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class=" fs-6 fw-semibold mb-2">State</label>
+                                        <label class="required fs-6 fw-semibold mb-2">State</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input class="form-control form-control-solid" placeholder="State" name="CustomerContactState" value="" />
+                                        @*<input class="form-control form-control-solid" placeholder="State" name="CustomerContactState" value="" />*@
+                                        <select name="dropdown" class="form-select form-select-solid" placeholder="Select State" name="State" />
+                                        <option value="">Select State</option>
+                                        <option value="">Alabama</option>
+                                        <option value="">Alaska</option>
+                                        <option value="">Arizona</option>
+                                        <option value="">Arkansas</option>
+                                        <option value="">California</option>
+                                        <option value="">Colorado</option>
+                                        <option value="">Connecticut</option>
+                                        <option value="">Delaware</option>
+                                        <option value="">Florida</option>
+                                        <option value="">Georgia</option>
+                                        <option value="">Hawaii</option>
+                                        <option value="">Idaho</option>
+                                        <option value="">Illinois</option>
+                                        <option value="">Indiana</option>
+                                        <option value="">Lowa</option>
+                                        <option value="">Kansas</option>
+                                        <option value="">Kentucky</option>
+                                        <option value="">Louisiana</option>
+                                        <option value="">Maine</option>
+                                        <option value="">Maryland</option>
+                                        <option value="">Massachusetts</option>
+                                        <option value="">Michigan</option>
+                                        <option value="">Minnesota</option>
+                                        <option value="">Mississippi</option>
+                                        <option value="">Missouri</option>
+                                        <option value="">Montana</option>
+                                        <option value="">Nebraska</option>
+                                        <option value="">Nevada</option>
+                                        <option value="">New Hampshire</option>
+                                        <option value="">New Jersey</option>
+                                        <option value="">New Mexico</option>
+                                        <option value="">New York</option>
+                                        <option value="">North Carolina</option>
+                                        <option value="">North Dakota</option>
+                                        <option value="">Ohio</option>
+                                        <option value="">Oklahoma</option>
+                                        <option value="">Oregon</option>
+                                        <option value="">Pennsylvania</option>
+                                        <option value="">Rhode Island</option>
+                                        <option value="">South Carolina</option>
+                                        <option value="">South Dakota</option>
+                                        <option value="">Tennessee</option>
+                                        <option value="">Texas</option>
+                                        <option value="">Utah</option>
+                                        <option value="">Vermont</option>
+                                        <option value="">Virginia</option>
+                                        <option value="">Washington</option>
+                                        <option value="">West Virginia</option>
+                                        <option value="">Wisconsin</option>
+                                        <option value="">Wyoming</option>
+                                        </select>
                                         <!--end::Input-->
                                     </div>
                                     <!--end::Col-->
@@ -259,7 +312,7 @@
                                     <!--begin::Col-->
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class=" fs-6 fw-semibold mb-2">Zip</label>
+                                        <label class="required fs-6 fw-semibold mb-2">Zip</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <input class="form-control form-control-solid" placeholder="Zip" name="CustomerContactZip" value="" />
@@ -269,7 +322,7 @@
                                     <!--begin::Col-->
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class=" fs-6 fw-semibold mb-2">Term</label>
+                                        <label class="required fs-6 fw-semibold mb-2">Term</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <input class="form-control form-control-solid" placeholder="Term" name="CustomerTerm" value="" />
@@ -302,7 +355,7 @@
                         <!--begin::Modal footer-->
                         <div class="modal-footer flex-center">
                             <!--begin::Button-->
-                            <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">Discard</button>
+                            <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-danger me-3">Discard</button>
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">

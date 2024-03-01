@@ -17,27 +17,96 @@ var KTModalCustomersAdd = function () {
 			{
 				fields: {
                     'CustomerName': {
-						validators: {
+                        validators: {
+                            stringLength: {
+                                max: 60,
+                                message: 'The name must be less than 60 characters',
+                            },
 							notEmpty: {
-								message: 'Name is required'
+                                message: 'Name is required'
 							}
 						}
 					},
                     
                     'CustomerContactPhone': {
-						validators: {
+                        validators: {
+                            //phone: {
+                          //      country: function () {
+                          //          return form.querySelector('[name="US"]').value;
+                          //      },
+                         //       message: 'The value is not a valid phone number',
+                         //   },
 							notEmpty: {
                                 message: 'Phone is required'
                             }
 						}
 					},
                     'CustomerContactEmail': {
-						validators: {
+                        validators: {
+                            emailAddress: {
+                                message: 'The value is not a valid email address'
+                            },
 							notEmpty: {
                                 message: 'Email is required'
 							}
 						}
-					}
+                    },
+                    'CustomerContactAddress1': {
+                        validators: {
+                            
+                            stringLength: {
+                                max: 100,
+                                message: 'Address cannot cannot be more than 100 characters',
+                            },
+                            notEmpty: {
+                                message: 'Address is required'
+                            }
+                        }
+                    },
+                    'CustomerContactCity': {
+                        validators: {
+                            regexp: {
+                                regexp: /^[a-zA-z] ?([a-zA-z]|[a-zA-z] ).*[a-zA-z]$/,
+                                message: 'Please enter valid city with min 3 characters',
+                            },
+                            stringLength: {
+                                max: 50,
+                                message: 'City cannot cannot be more than 50 characters',
+                            },
+                            notEmpty: {
+                                message: 'City is required'
+                            }
+                        }
+                    },
+                    'CustomerContactState': {
+                        validators: {
+                            stringLength: {
+                                max: 40,
+                                message: 'State cannot cannot be more than 40 characters',
+                            },
+                            notEmpty: {
+                                message: 'State is required'
+                            }
+                        }
+                    },
+                    'CustomerContactZip': {
+                        validators: {
+                            regexp: {
+                                regexp: /^\d{5}$/,
+                                message: 'The US zip code must contain 5 digits',
+                            },
+                            notEmpty: {
+                                message: 'ZipCode is required'
+                            }
+                        }
+                    },
+                    'CustomerTerm': {
+                        validators: {
+                            notEmpty: {
+                                message: 'Term is required'
+                            }
+                        }
+                    }
 					
 				},
 				plugins: {
@@ -178,7 +247,7 @@ var KTModalCustomersAdd = function () {
                 cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
+                    cancelButton: "btn btn-success"
                 }
             }).then(function (result) {
                 if (result.value) {
@@ -210,7 +279,7 @@ var KTModalCustomersAdd = function () {
                 cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
+                    cancelButton: "btn btn-success"
                 }
             }).then(function (result) {
                 if (result.value) {

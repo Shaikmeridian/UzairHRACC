@@ -3,6 +3,13 @@
     ViewBag.Title = "ViewConsultants";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .required::after {
+        content: " * ";
+        color: red;
+        font-size: 20px;
+    }
+</style>
 
 <!--begin::Vendor Stylesheets(used for this page only)-->
 <link href="~/Content/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
@@ -158,7 +165,7 @@
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold mb-2">
                                                 <span class="required">Select Customer</span>
-                                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Country of origination"></i>
+                                               <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Country of origination"></i>
                                             </label>
                                             <!--end::Label
                                             <!--begin::Input-->
@@ -188,33 +195,215 @@
                                 <div class="row g-9 mb-7">
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Position Title</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span class="required">Position Title</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input type="text" class="form-control form-control-solid" placeholder="" name="PositionTitle" />
+                                        @*<input type="text" class="form-control form-control-solid" placeholder="" name="PositionTitle" />*@
+                                        <select name="dropdown" class="form-select form-select-solid" placeholder="Select Position Title" name="Position Title" />
+                                        <option value="">Select Position Title</option>
+                                        <option value="option 2">Director Systems and Programming</option>
+                                        <option value="option 3">Mgmt. Applications Development</option>
+                                        <option value="">Applications Architect</option>
+                                        <option value="">
+                                            Enterprise Application Integration (EA)
+                                            Engineer
+                                        </option>
+                                        <option value="">Systems Analyst</option>
+                                        <option value="">Applications Development Analyst</option>
+                                        <option value="">Database Manager</option>
+                                        <option value="">Data Architect</option>
+                                        <option value="">Data Modeler</option>
+                                        <option value="">Database Analyst</option>
+                                        <option value="">Database Administrator</option>
+                                        <option value="">Mgmt. Quality Assurance</option>
+                                        <option value="">Quality Engineering Consultant</option>
+                                        <option value="">Quality Assurance Analyst</option>
+                                        <option value="">Manager, Technology Research</option>
+                                        <option value="">Technology Research Analyst</option>
+                                        <option value="">Manager, Client Technologies</option>
+                                        <option value="">Client Technologies Analyst</option>
+                                        <option value="">Client Technologies Technician</option>
+                                        <option value="">Mgmt. Customer Support</option>
+                                        <option value="">Customer Support Analyst</option>
+                                        <option value="">Customer Support Technician</option>
+                                        <option value="">Director, Network Operations</option>
+                                        <option value="">Manager, Network Operations</option>
+                                        <option value="">Network Architect</option>
+                                        <option value="">Network Engineer</option>
+                                        <option value="">Network Analyst</option>
+                                        <option value="">Network Administrator</option>
+                                        <option value="">Network Technician</option>
+                                        <option value="">Mgmt. Internet Operations</option>
+                                        <option value="">Internet/Web Architect</option>
+                                        <option value="">Internet/Web Engineer</option>
+                                        <option value="">Web Applications Programmer</option>
+                                        <option value="">Web Designer</option>
+                                        <option value="">Webmaster</option>
+                                        <option value="">Internet/Web Systems Administrator</option>
+                                        <option value="">Web Customer Support Specialist</option>
+                                        <option value="">Director, Data Center Operations</option>
+                                        <option value="">Manager, Computer Operations</option>
+                                        <option value="">Supervisor, Computer Operations</option>
+                                        <option value="">Computer Operator</option>
+                                        <option value="">Manager, Capacity Planning</option>
+                                        <option value="">Manager, Production Support</option>
+                                        <option value="">Production Support Analyst</option>
+                                        <option value="">Manager, Telecommunication Operations</option>
+                                        <option value="">Telecommunication Engineer</option>
+                                        <option value="">Telecommunication Technician</option>
+                                        <option value="">Director, Electronic Commerce</option>
+                                        <option value="">Manager, Electronic Commerce</option>
+                                        <option value="">Electronic Commerce Analyst</option>
+                                        <option value="">EDI Specialist</option>
+                                        <option value="">Director, Data Warehouse</option>
+                                        <option value="">Manager, Data Warehouse</option>
+                                        <option value="">Business Intelligence Architect</option>
+                                        <option value="">Data Warehouse Analyst</option>
+                                        <option value="">Data Warehouse Administrator</option>
+                                        <option value="">Manager, Decision Support</option>
+                                        <option value="">Decision Support Specialist</option>
+                                        <option value="">Decision Support Administrator</option>
+                                        <option value="">Manager, CRM Technology</option>
+                                        <option value="">Knowledge Engineer</option>
+                                        <option value="">ERP Team Lead</option>
+                                        <option value="">ERP Team Member</option>
+                                        <option value="">ERP Configurer</option>
+                                        <option value="">ERP Programmer/Analyst</option>
+                                        <option value="">ERP Systems Support Specialist</option>
+                                        <option value="">ERP Systems Administrator</option>
+                                        <option value="">Basis/Ale Technical Consultant</option>
+                                        <option value="">Chief Sourcing Officer</option>
+                                        <option value="">Manager IT Procurement</option>
+                                        <option value="">IT Procurement Specialist</option>
+                                        <option value="">Manager, Vendor Relationships</option>
+                                        <option value="">Manager, Outsourcing Contracts</option>
+                                        <option value="">Contracts Manager</option>
+                                        <option value="">Finance/Administration Specialist</option>
+                                        <option value="">Technical Advisor</option>
+                                        <option value="">Asset Manager</option>
+                                        <option value="">Asset Management Administrator</option>
+                                        <option value="">Director, HR/IT</option>
+                                        <option value="">Manager, HR/IT Staffing</option>
+                                        <option value="">Technical Recruiter</option>
+                                        <option value="">HR/IT Generalist</option>
+                                        <option value="">Documentation Specialist/Technical Writer</option>
+                                        <option value="">Manager, IT Finance</option>
+                                        <option value="">Director, IT Risk and Compliance</option>
+                                        <option value="">Manager, IT Audit</option>
+                                        <option value="">IT Auditor</option>
+                                        <option value="">Business Management Specialist</option>
+                                        <option value="">Manager, Technical Training</option>
+                                        <option value="">Technical Trainer</option>
+                                        <option value="">Security Manager</option>
+                                        <option value="">Security Analyst</option>
+                                        <option value="">Data Security Specialist</option>
+                                        <option value="">Network Security Specialist</option>
+                                        <option value="">System Security Specialist</option>
+                                        <option value="">Web Security Specialist</option>
+                                        <option value="">Manager, Business Continuance</option>
+                                        <option value="">Business Continuance Specialist</option>
+                                        <option value="">Manager, Product Development</option>
+                                        <option value="">Product Architect</option>
+                                        <option value="">Product Engineer</option>
+                                        <option value="">Product Developer</option>
+                                        <option value="">Manager, Systems Software</option>
+                                        <option value="">Systems Architect</option>
+                                        <option value="">Systems Software Programmer</option>
+                                        <option value="">Groupware Specialist</option>
+                                        <option value="">Systems Administrator</option>
+                                        <option value="">UNIX System Administrator</option>
+                                        <option value="">Storage Management Specialist</option>
+                                        <option value="">Director, Enterprise Architecture</option>
+                                        <option value="">Manager, IT Business Planning</option>
+                                        <option value="">Enterprise Architect</option>
+                                        <option value="">Business Process Consultant</option>
+                                        <option value="">IT Business Consultant</option>
+                                        <option value="">Business Analyst</option>
+                                        <option value="">Director, Business Relationships</option>
+                                        <option value="">Manager, Customer Relations</option>
+                                        <option value="">Configuration Management Analyst</option>
+                                        <option value="">Release/Build Engineer</option>
+                                        <option value="">Director, Program Management</option>
+                                        <option value="">Program Manager</option>
+                                        <option value="">Project Manager</option>
+                                        <option value="">Project Leader</option>
+                                        <option value="">Project Management Specialist</option>
+                                        <option value="">Resource Manager</option>
+                                        <option value="">Manager, Customer Service Hotline</option>
+                                        <option value="">Customer Service Hotline Representative</option>
+                                        <option value="">Manager, Technical Product Support</option>
+                                        <option value="">Technical Product Support Analyst</option>
+                                        <option value="">Technical Product Support Specialist</option>
+                                        </select>
                                         <!--end::Input-->
                                     </div>
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Position Family</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span class="required">Position Family</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input type="text" class="form-control form-control-solid" placeholder="" name="PositionFamily" />
+                                        @*<input type="text" class="form-control form-control-solid" placeholder="" name="PositionFamily" />*@
+                                        <select name="dropdown" class="form-select form-select-solid" placeholder="Select Position Family" name="Position Family" />
+                                        <option value="">Select Position Family</option>
+                                        <option value="">Applications Development</option>
+                                        <option value="">Data Strategy and Management</option>
+                                        <option value="">Quality Assurance</option>
+                                        <option value="">Technology Resource</option>
+                                        <option value="">Client Technologies</option>
+                                        <option value="">Customer Support</option>
+                                        <option value="">Network Management</option>
+                                        <option value="">Internet Planning,Eng.& Operations</option>
+                                        <option value="">Operations</option>
+                                        <option value="">Telecommunications</option>
+                                        <option value="">Electronic Commerce</option>
+                                        <option value="">Business Intelligence Systems Management</option>
+                                        <option value="">Enterprise Resource Planning (ERP)</option>
+                                        <option value="">Sourcing and Vendor Relationship Management</option>
+                                        <option value="">Business Management/Administration</option>
+                                        <option value="">Training</option>
+                                        <option value="">Security Management</option>
+                                        <option value="">Business Continuance Management</option>
+                                        <option value="">Product Development</option>
+                                        <option value="">Systems Programming & Admin</option>
+                                        <option value="">Business Analysis & Planning</option>
+                                        <option value="">Release Management</option>
+                                        <option value="">Program Management</option>
+                                        <option value="">Customer Service Hotline</option>
+                                        <option value="">Technical Product Support</option>
+                                        </select>
                                         <!--end::Input-->
                                     </div>
                                 </div>
                                 <div class="row g-9 mb-7">
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Position Scope Variant</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span class="required">Position Scope Variant</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input type="text" class="form-control form-control-solid" placeholder="" name="PositionScopeVariant" />
+                                        @*<input type="text" class="form-control form-control-solid" placeholder="" name="PositionScopeVariant" />*@
+                                        <select name="dropdown" class="form-select form-select-solid" placeholder="Select Position Scope Variant" name="Position Scope Variant" />
+                                        <option value="">Select Position Scope Variant</option>
+                                        <option value="">Team Leader</option>
+                                        <option value="">Manager</option>
+                                        <option value="">Senior Manager</option>
+                                        <option value="">Entry</option>
+                                        <option value="">Intermediate</option>
+                                        <option value="">Advanced</option>
+                                        <option value="">No Variance</option>
+                                        </select>
                                         <!--end::Input-->
                                     </div>
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Purchase Order No</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span class="required">Purchase Order No</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <input type="text" class="form-control form-control-solid" placeholder="" name="PurchaseOrderNo" />
@@ -224,7 +413,9 @@
                                 <div class="row g-9 mb-7">
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Purchase Requisition No</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span class="required">Purchase Requisition No</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <input type="text" class="form-control form-control-solid" placeholder="" name="PurchaseRequisitionNo" />
@@ -245,7 +436,9 @@
                                 <div class="row g-9 mb-7" id="hide_inactivedetails">
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class=" fs-6 fw-semibold mb-2">Inactive Date</label>
+                                        <label class=" fs-6 fw-semibold mb-2">
+                                            <span class="required">Inactive Date</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <div class="input-group" id="kt_td_picker_date_only" data-td-target-input="nearest" data-td-target-toggle="nearest">
@@ -263,7 +456,9 @@
                                     </div>
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
-                                        <label class="fs-6 fw-semibold mb-2">Inactive Reason</label>
+                                        <label class="fs-6 fw-semibold mb-2">
+                                            <span class="required">Inactive Reason</span>
+                                        </label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <input type="text" class="form-control form-control-solid" placeholder="" name="InactiveReason" id="InactiveReason"/>
@@ -281,7 +476,7 @@
                         <!--begin::Modal footer-->
                         <div class="modal-footer flex-center">
                             <!--begin::Button-->
-                            <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">Discard</button>
+                            <button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-danger me-3">Discard</button>
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">

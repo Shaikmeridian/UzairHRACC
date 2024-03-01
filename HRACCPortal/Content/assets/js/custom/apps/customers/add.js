@@ -4,7 +4,7 @@
 var KTModalCustomersAdd = function () {
     var submitButton;
     var cancelButton;
-	var closeButton;
+    var closeButton;
     var validator;
     var form;
     var modal;
@@ -12,128 +12,128 @@ var KTModalCustomersAdd = function () {
     // Init form inputs
     var handleForm = function () {
         // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
-		validator = FormValidation.formValidation(
-			form,
-			{
-				fields: {
+        validator = FormValidation.formValidation(
+            form,
+            {
+                fields: {
                     'FirstName': {
-						validators: {
-							notEmpty: {
-								message: 'First name is required'
-							}
-						}
-					},
+                        validators: {
+                            notEmpty: {
+                                message: 'First name is required'
+                            }
+                        }
+                    },
                     'LastName': {
-						validators: {
-							notEmpty: {
-								message: 'Last name is required'
-							}
-						}
-					},
+                        validators: {
+                            notEmpty: {
+                                message: 'Last name is required'
+                            }
+                        }
+                    },
                     'MiddleName': {
-						validators: {
-							notEmpty: {
-								message: 'Middele name is required'
-							}
-						}
-					},
+                        validators: {
+                            notEmpty: {
+                                message: 'Middele name is required'
+                            }
+                        }
+                    },
                     'ConsultantNameAbbrv': {
-						validators: {
-							notEmpty: {
-                                message: 'Consultant Name Abbrivation is required'
-							}
-						}
-					},
+                        validators: {
+                            notEmpty: {
+                                message: 'Consultant Name Abbreviation is required'
+                            }
+                        }
+                    },
                     'Phone': {
-						validators: {
-							notEmpty: {
+                        validators: {
+                            notEmpty: {
                                 message: 'Phone is required'
-							}
-						}
-					},
+                            }
+                        }
+                    },
                     'Email': {
-						validators: {
-							notEmpty: {
+                        validators: {
+                            notEmpty: {
                                 message: 'Email is required'
-							}
-						}
-					},
+                            }
+                        }
+                    },
                     'StartDate': {
-						validators: {
-							notEmpty: {
+                        validators: {
+                            notEmpty: {
                                 message: 'Start Date is required'
-							}
-						}
-					},
-					
-				},
-				plugins: {
-					trigger: new FormValidation.plugins.Trigger(),
-					bootstrap: new FormValidation.plugins.Bootstrap5({
-						rowSelector: '.fv-row',
+                            }
+                        }
+                    },
+
+                },
+                plugins: {
+                    trigger: new FormValidation.plugins.Trigger(),
+                    bootstrap: new FormValidation.plugins.Bootstrap5({
+                        rowSelector: '.fv-row',
                         eleInvalidClass: '',
                         eleValidClass: ''
-					})
-				}
-			}
-		);
+                    })
+                }
+            }
+        );
 
-		// Revalidate country field. For more info, plase visit the official plugin site: https://select2.org/
+        // Revalidate country field. For more info, plase visit the official plugin site: https://select2.org/
         //$(form.querySelector('[name="country"]')).on('change', function() {
         //    // Revalidate the field when an option is chosen
         //    validator.revalidateField('country');
         //});
 
-		// Action buttons
-		submitButton.addEventListener('click', function (e) {
+        // Action buttons
+        submitButton.addEventListener('click', function (e) {
             e.preventDefault();
             debugger;
-			// Validate form before submit
-			if (validator) {
-				validator.validate().then(function (status) {
-					console.log('validated!');
+            // Validate form before submit
+            if (validator) {
+                validator.validate().then(function (status) {
+                    console.log('validated!');
 
-					if (status == 'Valid') {
+                    if (status == 'Valid') {
 
 
-						submitButton.setAttribute('data-kt-indicator', 'on');
+                        submitButton.setAttribute('data-kt-indicator', 'on');
 
-						// Disable submit button whilst loading
-						//submitButton.disabled = true;
+                        // Disable submit button whilst loading
+                        //submitButton.disabled = true;
                         var ConsultantObj = {};
-                        ConsultantObj.FirstName = form.FirstName.value; 
+                        ConsultantObj.FirstName = form.FirstName.value;
                         ConsultantObj.LastName = form.LastName.value;
                         ConsultantObj.MiddleName = form.MiddleName.value;
-                        ConsultantObj.ConsultantNameAbbrv = form.ConsultantNameAbbrv.value; 
-                        ConsultantObj.Address1 = form.Address1.value; 
-                        ConsultantObj.Address2 = form.Address2.value; 
-                        ConsultantObj.City = form.City.value; 
-                        ConsultantObj.State = form.State.value; 
-                        ConsultantObj.Zip = form.Zip.value; 
-                        ConsultantObj.Phone = form.Phone.value; 
-                        ConsultantObj.Email = form.Email.value; 
-                        ConsultantObj.Title = form.Title.value; 
-                        ConsultantObj.StartDate = form.StartDate.value; 
+                        ConsultantObj.ConsultantNameAbbrv = form.ConsultantNameAbbrv.value;
+                        ConsultantObj.Address1 = form.Address1.value;
+                        ConsultantObj.Address2 = form.Address2.value;
+                        ConsultantObj.City = form.City.value;
+                        ConsultantObj.State = form.State.value;
+                        ConsultantObj.Zip = form.Zip.value;
+                        ConsultantObj.Phone = form.Phone.value;
+                        ConsultantObj.Email = form.Email.value;
+                        ConsultantObj.Title = form.Title.value;
+                        ConsultantObj.StartDate = form.StartDate.value;
                         var actv = $('input#Active').prop('checked');
-                        ConsultantObj.Active = actv; 
+                        ConsultantObj.Active = actv;
 
-                        if (actv == false && form.InactiveReason.value == "" ) {
+                        if (actv == false && form.InactiveReason.value == "") {
                             $("#divreason").show();
                             submitButton.setAttribute('data-kt-indicator', 'off');
                             return false;
                         } else {
                             $("#divreason").hide();
                         }
-                        if (actv == false && form.InactiveDate.value == "" ) {
+                        if (actv == false && form.InactiveDate.value == "") {
                             $("#divdate").show();
                             submitButton.setAttribute('data-kt-indicator', 'off');
                             return false;
                         } else {
                             $("#divdate").hide();
                         }
-                        ConsultantObj.InactiveDate = form.InactiveDate.value; 
-                        ConsultantObj.InactiveReason = form.InactiveReason.value; 
-                        ConsultantObj.ConsultantIdPK = form.ConsultantIdPK.value; 
+                        ConsultantObj.InactiveDate = form.InactiveDate.value;
+                        ConsultantObj.InactiveReason = form.InactiveReason.value;
+                        ConsultantObj.ConsultantIdPK = form.ConsultantIdPK.value;
                         console.log("ConsultantObj:" + JSON.stringify(ConsultantObj))
                         $.ajax({
                             type: "POST",
@@ -143,7 +143,7 @@ var KTModalCustomersAdd = function () {
                             dataType: "json",
                             contentType: "application/json; charset=utf-8",
                             success: function (response) {
-                             submitButton.removeAttribute('data-kt-indicator');
+                                submitButton.removeAttribute('data-kt-indicator');
 
                                 // alert("Data has been added successfully.");
                                 if (response.message == "success" || response.message == "updated") {
@@ -167,7 +167,7 @@ var KTModalCustomersAdd = function () {
                                             // Redirect to customers list page
                                             window.location = form.getAttribute("data-kt-redirect");
                                         }
-                                    });		
+                                    });
                                 } else {
                                     console.log(response.message);
                                     Swal.fire({
@@ -195,25 +195,25 @@ var KTModalCustomersAdd = function () {
                                         confirmButton: "btn btn-primary"
                                     }
                                 });
-                                
+
                             }
                         });
-						   						
+
                     } else {
-                        
-						Swal.fire({
-							text: "Sorry, looks like there are some errors detected, please try again.",
-							icon: "error",
-							buttonsStyling: false,
-							confirmButtonText: "Ok, got it!",
-							customClass: {
-								confirmButton: "btn btn-primary"
-							}
-						});
-					}
-				});
-			}
-		});
+
+                        Swal.fire({
+                            text: "Sorry, looks like there are some errors detected, please try again.",
+                            icon: "error",
+                            buttonsStyling: false,
+                            confirmButtonText: "Ok, got it!",
+                            customClass: {
+                                confirmButton: "btn btn-primary"
+                            }
+                        });
+                    }
+                });
+            }
+        });
 
         cancelButton.addEventListener('click', function (e) {
             e.preventDefault();
@@ -227,7 +227,7 @@ var KTModalCustomersAdd = function () {
                 cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
+                    cancelButton: "btn btn-success"
                 }
             }).then(function (result) {
                 if (result.value) {
@@ -247,8 +247,8 @@ var KTModalCustomersAdd = function () {
             });
         });
 
-		closeButton.addEventListener('click', function(e){
-			e.preventDefault();
+        closeButton.addEventListener('click', function (e) {
+            e.preventDefault();
 
             Swal.fire({
                 text: "Are you sure you would like to cancel?",
@@ -259,7 +259,7 @@ var KTModalCustomersAdd = function () {
                 cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
+                    cancelButton: "btn btn-success"
                 }
             }).then(function (result) {
                 if (result.value) {
@@ -277,7 +277,7 @@ var KTModalCustomersAdd = function () {
                     });
                 }
             });
-		})
+        })
     }
 
     return {
@@ -289,7 +289,7 @@ var KTModalCustomersAdd = function () {
             form = document.querySelector('#kt_modal_add_customer_form');
             submitButton = form.querySelector('#kt_modal_add_customer_submit');
             cancelButton = form.querySelector('#kt_modal_add_customer_cancel');
-			closeButton = form.querySelector('#kt_modal_add_customer_close');
+            closeButton = form.querySelector('#kt_modal_add_customer_close');
 
             handleForm();
         }
@@ -298,5 +298,5 @@ var KTModalCustomersAdd = function () {
 
 // On document ready
 KTUtil.onDOMContentLoaded(function () {
-	KTModalCustomersAdd.init();
+    KTModalCustomersAdd.init();
 });
