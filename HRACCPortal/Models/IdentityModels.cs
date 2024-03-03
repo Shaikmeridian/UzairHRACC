@@ -29,5 +29,7 @@ namespace HRACCPortal.Models
         {
             return new ApplicationDbContext();
         }
+
+       
     }
 }

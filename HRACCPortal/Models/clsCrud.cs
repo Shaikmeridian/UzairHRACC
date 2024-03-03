@@ -17,7 +17,7 @@ namespace HRACCPortal.Models
         public InvoiceObjectModel invoiceObjectModel;
         public ConsultantPositionDetailsModel consultantPositionDetailsModel;
         //For Employees
-        public EmployeesModel employeesModel;
+       // public EmployeesModel employeesModel;
         public clsCrud()
         {
             customerModel = new CustomerModel();
@@ -26,12 +26,12 @@ namespace HRACCPortal.Models
             invoiceObjectModel = new InvoiceObjectModel();
             consultantPositionDetailsModel = new ConsultantPositionDetailsModel();
             //For Employees
-            employeesModel = new EmployeesModel();
+          //  employeesModel = new EmployeesModel();
             entities = new HRACCDBEntities();
         }
         public List<CustomerModel> CustomerList { get; set; }
         //For Employees
-        public List<EmployeesModel> EmployeesList { get; set; }
+      //  public List<EmployeesModel> EmployeesList { get; set; }
         public List<ConsultantModel> ConsultantList { get; set; }
         public List<ConsultantPositionDetailsModel> ConsultantPositionDetailsList { get; set; }
 

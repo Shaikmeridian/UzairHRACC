@@ -177,10 +177,10 @@
                                         <!--end::Input-->
                                     </div>
                                     <!--end::Col-->
-                                    
+
                                 </div>
                                 <!--begin::Input group-->
-                               
+
                                 <div class="row g-9 mb-7">
                                     <!--begin::Col-->
                                     <div class="col-md-6 fv-row">
@@ -188,7 +188,7 @@
                                         <label class="required fs-6 fw-semibold mb-2">Phone</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        
+
                                         <input type="text" class="form-control form-control-solid PNumber" placeholder="Phone" name="CustomerContactPhone" id="CustomerContactPhone" />
                                         <!--end::Input-->
                                     </div>
@@ -332,7 +332,6 @@
 
                                 </div>
                                 <!--end::Input group-->
-                               
                                 <!--begin::Input group-->
                                 <div class="row g-9 mb-7">
                                     <!--begin::Col-->
@@ -348,7 +347,7 @@
                                     <!--end::Col-->
 
                                 </div>
-                                
+
                             </div>
                         </div>
                         <!--end::Card body-->
@@ -404,7 +403,7 @@
     <script src="~/Content/assets/js/custom/widgets.js"></script>
     <!--end::Custom Javascript-->
     <script>
-        
+
         new tempusDominus.TempusDominus(document.getElementById("StartDate"), {
             display: {
                 viewMode: "calendar",
@@ -453,13 +452,13 @@
                     $("input[name='CustomerContactPhone']").val(response.cl.CustomerContactPhone);
                     $("input[name='CustomerContactEmail']").val(response.cl.CustomerContactEmail);
                     $("input[name='CustomerTerm']").val(response.cl.CustomerTerm);
-                      if (response.cl.isActive == true) {
+                    if (response.cl.isActive == true) {
                         $("#isActive").prop('checked', true);
                     }
                     if (response.cl.isActive == false) {
                         $("#isActive").prop('checked', false);
                     }
-                    
+
 
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -483,7 +482,7 @@
 
         }
 
-        
-        
+
+
     </script>
 }
