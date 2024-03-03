@@ -6,26 +6,27 @@ using System.Web;
 
 namespace HRACCPortal.ObjectModel
 {
-    public class EmployeesObjectModel
+    public class EmployerObjectModel
     {
-       
+        
+
             public string IndianTimeNow = (TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("India Standard Time"))).ToString();
             public DateTime todaydate = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("India Standard Time")).Date;
 
             //employees
-            
-            public int EmployeesIdPK { get; set; }
+
+            public int EmployerIdPK { get; set; }
             [Required(ErrorMessage = "Please enter employee name.")]
-            public string EmployeesName { get; set; }
+            public string EmployerName { get; set; }
             [Required(ErrorMessage = "Please enter phone number.")]
-            public string EmployeesContactPhone { get; set; }
+            public string EmployerContactPhone { get; set; }
             [Required(ErrorMessage = "Please enter email id.")]
-            public string EmployeesContactEmail { get; set; }
-            public string EmployeesContactAddress1 { get; set; }
-            public string EmployeesContactAddress2 { get; set; }
-            public string EmployeesContactCity { get; set; }
-            public string EmployeesContactState { get; set; }
-            public string EmployeesContactZip { get; set; }
+            public string EmployerContactEmail { get; set; }
+            public string EmployerContactAddress1 { get; set; }
+            public string EmployerContactAddress2 { get; set; }
+            public string EmployerContactCity { get; set; }
+            public string EmployerContactState { get; set; }
+            public string EmployerContactZip { get; set; }
             public string DateAdded { get; set; }
             public string DateUpdated { get; set; }
             public string AddedBy { get; set; }

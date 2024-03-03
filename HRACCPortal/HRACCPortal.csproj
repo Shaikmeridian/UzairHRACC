@@ -208,7 +208,7 @@
     <Compile Include="Models\ConsultantModel.cs" />
     <Compile Include="Models\ConsultantPositionDetailsModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
-    <Compile Include="Models\EmployeesModel.cs" />
+    <Compile Include="Models\EmployerModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InvoiceModel.cs" />
     <Compile Include="Models\InvoicePdfModel.cs" />
@@ -216,7 +216,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PositionModel.cs" />
     <Compile Include="ObjectModel\CustomerObjectModel.cs" />
-    <Compile Include="ObjectModel\EmployeesObjectModel.cs" />
+    <Compile Include="ObjectModel\EmployerObjectModel.cs" />
     <Compile Include="ObjectModel\InvoiceObjectModel.cs" />
     <Compile Include="ObjectModel\LoginObjectModel.cs" />
     <Compile Include="ObjectModel\PositionObjectModel.cs" />
