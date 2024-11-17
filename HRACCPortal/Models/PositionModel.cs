@@ -149,7 +149,7 @@ namespace HRACCPortal.Models
 
                             }).ToList();
         }
-
+        //Uzair
         //Start -- Position Rate
         //positionList
         public IEnumerable<SelectListItem> ddlPositionList
